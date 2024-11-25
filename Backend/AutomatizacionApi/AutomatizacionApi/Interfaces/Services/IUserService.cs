@@ -7,6 +7,6 @@ namespace AutomatizacionApi.Interfaces.Services
     public interface IUserService
     {
         Task<Result<LoginResponse>> AuthenticationAsync(LoginRequest request);
-        Task<ApplicationUser> RegisterAsync(ApplicationUser user);
+        Task<ApplicationUser> RegisterAsync(ApplicationUser user, string password);
     }
 }
