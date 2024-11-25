@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\Migrations\\20241125173909_InitialIdentityMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AutomatizacionApi\\Migrations\\20241125173909_InitialIdentityMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{974C3C71-91B5-4406-86A3-57937AE0439B}|AutomatizacionApi\\AutomatizacionApi.csproj|c:\\users\\alant\\onedrive\\desktop\\proyectoautomatizacion\\backend\\automatizacionapi\\automatizacionapi\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974C3C71-91B5-4406-86A3-57937AE0439B}|AutomatizacionApi\\AutomatizacionApi.csproj|solutionrelative:automatizacionapi\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{974C3C71-91B5-4406-86A3-57937AE0439B}|AutomatizacionApi\\AutomatizacionApi.csproj|c:\\users\\alant\\onedrive\\desktop\\proyectoautomatizacion\\backend\\automatizacionapi\\automatizacionapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{974C3C71-91B5-4406-86A3-57937AE0439B}|AutomatizacionApi\\AutomatizacionApi.csproj|solutionrelative:automatizacionapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{974C3C71-91B5-4406-86A3-57937AE0439B}|AutomatizacionApi\\AutomatizacionApi.csproj|c:\\users\\alant\\onedrive\\desktop\\proyectoautomatizacion\\backend\\automatizacionapi\\automatizacionapi\\serviceregistrations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{974C3C71-91B5-4406-86A3-57937AE0439B}|AutomatizacionApi\\AutomatizacionApi.csproj|solutionrelative:automatizacionapi\\serviceregistrations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{974C3C71-91B5-4406-86A3-57937AE0439B}|AutomatizacionApi\\AutomatizacionApi.csproj|c:\\users\\alant\\onedrive\\desktop\\proyectoautomatizacion\\backend\\automatizacionapi\\automatizacionapi\\context\\identity\\identitycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{974C3C71-91B5-4406-86A3-57937AE0439B}|AutomatizacionApi\\AutomatizacionApi.csproj|solutionrelative:automatizacionapi\\context\\identity\\identitycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\Migrations\\Main\\20241125172319_InitialMainMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AutomatizacionApi\\Migrations\\Main\\20241125172319_InitialMainMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{974C3C71-91B5-4406-86A3-57937AE0439B}|AutomatizacionApi\\AutomatizacionApi.csproj|c:\\users\\alant\\onedrive\\desktop\\proyectoautomatizacion\\backend\\automatizacionapi\\automatizacionapi\\seeds\\userseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{974C3C71-91B5-4406-86A3-57937AE0439B}|AutomatizacionApi\\AutomatizacionApi.csproj|solutionrelative:automatizacionapi\\seeds\\userseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,66 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20241125173909_InitialIdentityMigration.cs",
-              "DocumentMoniker": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\Migrations\\20241125173909_InitialIdentityMigration.cs",
-              "RelativeDocumentMoniker": "AutomatizacionApi\\Migrations\\20241125173909_InitialIdentityMigration.cs",
-              "ToolTip": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\Migrations\\20241125173909_InitialIdentityMigration.cs",
-              "RelativeToolTip": "AutomatizacionApi\\Migrations\\20241125173909_InitialIdentityMigration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "AutomatizacionApi\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\Services\\UserService.cs",
+              "RelativeToolTip": "AutomatizacionApi\\Services\\UserService.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAiwDUAAAC3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T17:39:10.016Z",
+              "WhenOpened": "2024-11-25T17:41:38.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\Program.cs",
-              "RelativeDocumentMoniker": "AutomatizacionApi\\Program.cs",
-              "ToolTip": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\Program.cs",
-              "RelativeToolTip": "AutomatizacionApi\\Program.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Title": "UserSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\SEEDs\\UserSeeder.cs",
+              "RelativeDocumentMoniker": "AutomatizacionApi\\SEEDs\\UserSeeder.cs",
+              "ToolTip": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\SEEDs\\UserSeeder.cs",
+              "RelativeToolTip": "AutomatizacionApi\\SEEDs\\UserSeeder.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T17:38:29.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ServiceRegistrations.cs",
-              "DocumentMoniker": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\ServiceRegistrations.cs",
-              "RelativeDocumentMoniker": "AutomatizacionApi\\ServiceRegistrations.cs",
-              "ToolTip": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\ServiceRegistrations.cs",
-              "RelativeToolTip": "AutomatizacionApi\\ServiceRegistrations.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T17:20:00.183Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IdentityContext.cs",
-              "DocumentMoniker": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\Context\\Identity\\IdentityContext.cs",
-              "RelativeDocumentMoniker": "AutomatizacionApi\\Context\\Identity\\IdentityContext.cs",
-              "ToolTip": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\Context\\Identity\\IdentityContext.cs",
-              "RelativeToolTip": "AutomatizacionApi\\Context\\Identity\\IdentityContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T17:19:57.182Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20241125172319_InitialMainMigration.cs",
-              "DocumentMoniker": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\Migrations\\Main\\20241125172319_InitialMainMigration.cs",
-              "RelativeDocumentMoniker": "AutomatizacionApi\\Migrations\\Main\\20241125172319_InitialMainMigration.cs",
-              "ToolTip": "C:\\Users\\alant\\OneDrive\\Desktop\\proyectoAutomatizacion\\Backend\\AutomatizacionApi\\AutomatizacionApi\\Migrations\\Main\\20241125172319_InitialMainMigration.cs",
-              "RelativeToolTip": "AutomatizacionApi\\Migrations\\Main\\20241125172319_InitialMainMigration.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T17:23:19.169Z",
+              "WhenOpened": "2024-11-25T17:40:39.479Z",
               "EditorCaption": ""
             }
           ]
