@@ -1,9 +1,9 @@
-﻿using AutomatizacionApi.Context.Entity;
-using AutomatizacionApi.Context.Identity;
+﻿using AutomatizacionApi.Context.Identity;
 using AutomatizacionApi.Entities;
 using AutomatizacionApi.Interfaces.Repositories;
 using AutomatizacionApi.Interfaces.Services;
 using AutomatizacionApi.Repositories;
+using AutomatizacionApi.SEEDs;
 using AutomatizacionApi.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -42,22 +42,6 @@ namespace AutomatizacionApi
             });
         }
 
-
-        public static void AddMainContext(this IServiceCollection services, IConfiguration configuration)
-        {
-            //replace the connection string with the values from the configuration
-            string defaultConnection = configuration.GetConnectionString("DefaultConnection")!
-                  .Replace("${DB_HOST}", configuration["DB_HOST"])
-                  .Replace("${DB_NAME}", configuration["DB_NAME"])
-                  .Replace("${DB_USERNAME}", configuration["DB_USERNAME"])
-                  .Replace("${DB_PASSWORD}", configuration["DB_PASSWORD"]);
-
-            // Add the main context
-            services.AddDbContext<MainContext>(options =>
-            options.UseSqlServer(defaultConnection,
-            m => m.MigrationsAssembly(typeof(MainContext).Assembly.FullName)));
-        }
-
         public static void AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<IUserRepository, UserRepository>();
@@ -67,5 +51,6 @@ namespace AutomatizacionApi
         {
             services.AddScoped<IUserService, UserService>();
         }
+
     }
 }

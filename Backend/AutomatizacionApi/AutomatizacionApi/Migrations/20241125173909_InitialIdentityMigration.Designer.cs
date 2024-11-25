@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AutomatizacionApi.Migrations
 {
     [DbContext(typeof(IdentityContext))]
-    [Migration("20241125155718_InitialIdentityMigration")]
+    [Migration("20241125173909_InitialIdentityMigration")]
     partial class InitialIdentityMigration
     {
         /// <inheritdoc />
@@ -88,7 +88,7 @@ namespace AutomatizacionApi.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.ToTable("AspNetUsers", "Identity");
+                    b.ToTable("ApplicationUser", "Identity");
                 });
 
             modelBuilder.Entity("AutomatizacionApi.Entities.Ticket", b =>
@@ -101,7 +101,7 @@ namespace AutomatizacionApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ticket", "Identity");
+                    b.ToTable("Tickets", "Identity");
                 });
 
             modelBuilder.Entity("AutomatizacionApi.Entities.UserTicket", b =>
@@ -116,7 +116,7 @@ namespace AutomatizacionApi.Migrations
 
                     b.HasIndex("TicketId");
 
-                    b.ToTable("UserTicket", "Identity");
+                    b.ToTable("UserTickets", "Identity");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

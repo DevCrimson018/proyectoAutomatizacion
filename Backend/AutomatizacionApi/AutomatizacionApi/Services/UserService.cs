@@ -18,9 +18,9 @@ namespace AutomatizacionApi.Services
         private readonly UserManager<ApplicationUser> _userManager = userManager;
         private readonly SignInManager<ApplicationUser> _signInManager = signInManager;
 
-        public async Task<ApplicationUser> RegisterAsync(ApplicationUser user)
+        public async Task<ApplicationUser> RegisterAsync(ApplicationUser user, string password)
         {
-            return await _userRepository.Add(user);
+            return await _userRepository.Add(user, password);
         }
 
         public async Task<Result<LoginResponse>> AuthenticationAsync(LoginRequest request)
@@ -51,7 +51,7 @@ namespace AutomatizacionApi.Services
         private async Task<string> GenerateTokenAsync(ApplicationUser user)
         {
             #region Header
-            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MySecretKey"));
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("poifjow;gqti;oihj4ogo43phig3oi4hgi43i4hg3gih43oigh4goi4hgoigh4gihi4gh4i3gh4gih43giofkvlfdnvlkbn"));
             var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256);
             var header = new JwtHeader(signingCredentials);
 

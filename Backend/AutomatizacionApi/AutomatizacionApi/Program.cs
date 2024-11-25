@@ -1,4 +1,6 @@
 using AutomatizacionApi;
+using AutomatizacionApi.Interfaces.Repositories;
+using AutomatizacionApi.SEEDs;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,10 +12,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddIdentityLayer(builder.Configuration);
-builder.Services.AddMainContext(builder.Configuration);
 
 builder.Services.AddRepositories();
 builder.Services.AddServices();
+
 
 builder.Services.AddSwaggerGen();
 
@@ -32,6 +34,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+
+using (var scope = app.Services.CreateScope())
+{
+    var userRepository = scope.ServiceProvider.GetRequiredService<IUserRepository>();
+    await UserSeeder.Seed(userRepository);
 }
 
 app.UseHttpsRedirection();

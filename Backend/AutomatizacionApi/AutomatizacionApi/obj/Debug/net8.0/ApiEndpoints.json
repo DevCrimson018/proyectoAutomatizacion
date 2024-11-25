@@ -2,8 +2,8 @@
   {
     "ContainingType": "AutomatizacionApi.Controllers.AuthController",
     "Method": "Login",
-    "RelativePath": "Api",
-    "HttpMethod": "GET",
+    "RelativePath": "Api/Auth",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
