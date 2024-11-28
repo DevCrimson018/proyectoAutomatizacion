@@ -1,4 +1,4 @@
-﻿using AutomatizacionApi.Entities.Common;
+﻿using AutomatizacionApi.Domain.Common;
 
 namespace AutomatizacionApi.Entities
 {

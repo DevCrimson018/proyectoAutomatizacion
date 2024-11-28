@@ -1,12 +1,12 @@
 ﻿using AutomatizacionApi.Context.Identity;
+using AutomatizacionApi.Context.Interceptors;
 using AutomatizacionApi.Entities;
+using AutomatizacionApi.Entities.User;
 using AutomatizacionApi.Interfaces.Repositories;
 using AutomatizacionApi.Interfaces.Services;
 using AutomatizacionApi.Repositories;
-using AutomatizacionApi.SEEDs;
 using AutomatizacionApi.Services;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AutomatizacionApi
@@ -16,6 +16,8 @@ namespace AutomatizacionApi
 
         public static void AddIdentityLayer(this IServiceCollection services, IConfiguration configuration)
         {
+            //Initialize interceptor
+            services.AddSingleton<AuditableEntityInterceptor>();
             //replace the connection string with the values from the configuration
             string identityConnection = configuration.GetConnectionString("IdentityConnection")!
                 .Replace("${DB_HOST}", configuration["DB_HOST"])
@@ -24,12 +26,16 @@ namespace AutomatizacionApi
                 .Replace("${DB_PASSWORD}", configuration["DB_PASSWORD"]);
 
             // Add the identity context
-            services.AddDbContext<IdentityContext>(options =>
-            options.UseSqlServer(identityConnection,
-            m => m.MigrationsAssembly(typeof(IdentityContext).Assembly.FullName)));
+            services.AddDbContext<IdentityContext>((sp, options) =>
+            {
+                var auditableInterceptor = sp.GetRequiredService<AuditableEntityInterceptor>();
+                options.UseSqlServer(identityConnection,
+                    m => m.MigrationsAssembly(typeof(IdentityContext).Assembly.FullName))
+                .AddInterceptors(auditableInterceptor);
+            });
 
             // Add the identity services
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<BaseUser, IdentityRole>()
                 .AddEntityFrameworkStores<IdentityContext>()
                 .AddDefaultTokenProviders();
 

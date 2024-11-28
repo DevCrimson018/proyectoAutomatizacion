@@ -1,4 +1,4 @@
-﻿namespace AutomatizacionApi.Entities
+﻿namespace AutomatizacionApi.Domain.Common
 {
     public class BaseEntity<T>
     {
