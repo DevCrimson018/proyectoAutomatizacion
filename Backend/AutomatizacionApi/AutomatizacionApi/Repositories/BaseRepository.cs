@@ -1,4 +1,4 @@
-﻿using AutomatizacionApi.Entities;
+﻿using AutomatizacionApi.Entities.Common;
 
 namespace AutomatizacionApi.Repositories
 {
