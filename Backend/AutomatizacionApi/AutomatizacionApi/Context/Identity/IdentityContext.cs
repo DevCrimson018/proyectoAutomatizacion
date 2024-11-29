@@ -27,12 +27,21 @@ namespace AutomatizacionApi.Context.Identity
                 .HasValue<Admin>("Admin")
                 .HasValue<Driver>("Driver");
 
-            // set table names
-            builder.Entity<Bus>().ToTable("Buses");
-            builder.Entity<BusStatus>().ToTable("BusStatuses");
 
+
+
+            // Override default schema for specific entities
+            builder.Entity<Reservation>().ToTable("Reservations", "dbo");
+            builder.Entity<Ticket>().ToTable("Tickets", "dbo");
+            builder.Entity<Location>().ToTable("Locations", "dbo");
+            builder.Entity<TicketsCode>().ToTable("TicketCodes", "dbo");
+            builder.Entity<Bus>().ToTable("Buses", "dbo");
+            builder.Entity<BusStatus>().ToTable("BusStatuses", "dbo");
+
+            // Primary key for Reservation
             builder.Entity<Reservation>()
                 .HasKey(x => x.Id);
+
             //Relationship between Reservation and Customer
             builder.Entity<Reservation>()
                 .HasOne(ut => ut.Customer)
