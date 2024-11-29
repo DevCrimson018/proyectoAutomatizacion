@@ -2,6 +2,7 @@
 using AutomatizacionApi.Entities.Common;
 using AutomatizacionApi.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace AutomatizacionApi.Repositories
 {
@@ -42,6 +43,7 @@ namespace AutomatizacionApi.Repositories
         {
             return await _dbSet.ToListAsync();
         }
+
 
     }
 }
