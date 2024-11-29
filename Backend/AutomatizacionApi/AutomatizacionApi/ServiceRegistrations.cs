@@ -50,13 +50,14 @@ namespace AutomatizacionApi
 
         public static void AddRepositories(this IServiceCollection services)
         {
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IRoleRepository, RoleRepository>();
+            services.AddTransient(typeof(IBaseRepository<,>), typeof(BaseRepository<,>));
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IRoleRepository, RoleRepository>();
         }
 
         public static void AddServices(this IServiceCollection services)
         {
-            services.AddScoped<IUserService, UserService>();
+            services.AddTransient<IUserService, UserService>();
         }
 
     }
