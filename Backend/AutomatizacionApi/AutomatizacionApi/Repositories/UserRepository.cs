@@ -1,5 +1,4 @@
-﻿using AutomatizacionApi.Entities;
-using AutomatizacionApi.Entities.User;
+﻿using AutomatizacionApi.Entities.User;
 using AutomatizacionApi.Interfaces.Repositories;
 using Microsoft.AspNetCore.Identity;
 

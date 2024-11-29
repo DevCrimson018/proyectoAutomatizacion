@@ -1,4 +1,5 @@
 ﻿using AutomatizacionApi.Interfaces.Repositories;
+using AutomatizacionApi.Repositories;
 
 namespace AutomatizacionApi.SEEDs
 {
@@ -14,25 +15,28 @@ namespace AutomatizacionApi.SEEDs
             {
                 new() {
                     Name = "Admin",
+                    NormalizedName = "ADMIN",
                     ConcurrencyStamp = Guid.NewGuid().ToString()
                 },
                 new()
                 {
                     Name = "Customer",
+                    NormalizedName = "CUSTOMER",
                     ConcurrencyStamp = Guid.NewGuid().ToString()
                 },
                 new()
                 {
                     Name = "Driver",
+                    NormalizedName = "DRIVER",
                     ConcurrencyStamp = Guid.NewGuid().ToString()
                 }
             };
 
-            // Add roles to the database in parallel
-            var tasks = roles.Select(role => roleRepository.Add(role)).ToList();
-            // Wait for all tasks to complete
-            await Task.WhenAll(tasks);
-     
+            foreach (var roleToAdd in roles)
+            {
+                await roleRepository.Add(roleToAdd);
+            }
+
         }
     }
 }

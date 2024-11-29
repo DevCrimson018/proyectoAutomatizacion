@@ -1,6 +1,9 @@
 using AutomatizacionApi;
+using AutomatizacionApi.Context.Identity;
+using AutomatizacionApi.Entities.User;
 using AutomatizacionApi.Interfaces.Repositories;
 using AutomatizacionApi.SEEDs;
+using Microsoft.AspNetCore.Identity;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,10 +42,12 @@ if (app.Environment.IsDevelopment())
 
 using (var scope = app.Services.CreateScope())
 {
-    //var userRepository = scope.ServiceProvider.GetRequiredService<IUserRepository>();
-    //var roleRepository = scope.ServiceProvider.GetRequiredService<IRoleRepository>();
-    //await UserSeeder.Seed(userRepository);
-    //await RoleSeeder.Seed(roleRepository);
+    var context = scope.ServiceProvider.GetRequiredService<IdentityContext>();
+    var userRepository = scope.ServiceProvider.GetRequiredService<IUserRepository>();
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    var roleRepository = scope.ServiceProvider.GetRequiredService<IRoleRepository>();
+    await RoleSeeder.Seed(roleRepository);
+    await UserSeeder.Seed(context, userRepository, userManager);
 }
 
 app.UseHttpsRedirection();
