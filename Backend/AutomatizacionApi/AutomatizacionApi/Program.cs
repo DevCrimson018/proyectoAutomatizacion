@@ -1,8 +1,8 @@
 using AutomatizacionApi;
-using AutomatizacionApi.Context.Identity;
-using AutomatizacionApi.Entities.User;
-using AutomatizacionApi.Interfaces.Repositories;
-using AutomatizacionApi.SEEDs;
+using AutomatizacionApi.Application.Interfaces.Repositories;
+using AutomatizacionApi.Domain.Entities.User;
+using AutomatizacionApi.Persistence.Context.Identity;
+using AutomatizacionApi.Persistence.SEEDs;
 using Microsoft.AspNetCore.Identity;
 using System.Reflection;
 

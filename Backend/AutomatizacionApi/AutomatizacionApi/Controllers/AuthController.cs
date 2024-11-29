@@ -1,5 +1,5 @@
-﻿using AutomatizacionApi.DTOs.Auth;
-using AutomatizacionApi.Interfaces.Services;
+﻿using AutomatizacionApi.Application.DTOs.Auth;
+using AutomatizacionApi.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AutomatizacionApi.Controllers
