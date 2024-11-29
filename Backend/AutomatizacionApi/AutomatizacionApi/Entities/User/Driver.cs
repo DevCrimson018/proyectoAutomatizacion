@@ -1,6 +1,6 @@
 ﻿namespace AutomatizacionApi.Entities.User
 {
-    public class Driver : BaseUser
+    public class Driver : ApplicationUser
     {
 
         public string? License { get; set; }

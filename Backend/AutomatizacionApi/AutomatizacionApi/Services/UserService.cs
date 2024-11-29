@@ -8,6 +8,7 @@ using System.Text;
 using System.Security.Claims;
 using AutomatizacionApi.Interfaces.Repositories;
 using AutomatizacionApi.Interfaces.Services;
+using AutomatizacionApi.Entities.User;
 namespace AutomatizacionApi.Services
 {
     public class UserService(IUserRepository userRepository,

@@ -39,8 +39,10 @@ if (app.Environment.IsDevelopment())
 
 using (var scope = app.Services.CreateScope())
 {
-    var userRepository = scope.ServiceProvider.GetRequiredService<IUserRepository>();
-    await UserSeeder.Seed(userRepository);
+    //var userRepository = scope.ServiceProvider.GetRequiredService<IUserRepository>();
+    //var roleRepository = scope.ServiceProvider.GetRequiredService<IRoleRepository>();
+    //await UserSeeder.Seed(userRepository);
+    //await RoleSeeder.Seed(roleRepository);
 }
 
 app.UseHttpsRedirection();

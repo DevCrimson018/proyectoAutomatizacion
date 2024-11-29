@@ -11,6 +11,6 @@ namespace AutomatizacionApi.Entities
         public string? PostalCode { get; set; }
 
         //Navigation Properties
-        public ICollection<Ticket>? Ticket { get; set; }
+        public ICollection<Ticket>? Tickets { get; set; }
     }
 }

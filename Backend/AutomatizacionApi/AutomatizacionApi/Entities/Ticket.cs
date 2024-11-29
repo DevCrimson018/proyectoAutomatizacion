@@ -13,6 +13,6 @@ namespace AutomatizacionApi.Entities
 
         //Navigation Properties
         public Location? Location { get; set; }
-        public ICollection<UserTicket>? UserTicket { get; set; }
+        public ICollection<Reservation>? Reservations { get; set; }
     }
 }

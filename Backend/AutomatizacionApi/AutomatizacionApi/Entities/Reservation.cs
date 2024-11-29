@@ -1,5 +1,6 @@
 ﻿using AutomatizacionApi.Entities.Common;
 using AutomatizacionApi.Entities.User;
+using AutomatizacionApi.Enum;
 
 namespace AutomatizacionApi.Entities
 {
@@ -9,6 +10,10 @@ namespace AutomatizacionApi.Entities
         public Customer? Customer { get; set; }
         public int TicketId { get; set; }
         public Ticket? Ticket { get; set; }
-        public 
+        public int Quantity { get; set; }
+        public ReservationStatus Status { get; set; } = ReservationStatus.Pending;
+
+        //Navigation Properties
+        public ICollection<TicketsCode>? TicketsCodes { get; set; }
     }
 }

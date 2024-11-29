@@ -1,6 +1,7 @@
 ﻿using AutomatizacionApi.Common;
 using AutomatizacionApi.DTOs.Auth;
 using AutomatizacionApi.Entities;
+using AutomatizacionApi.Entities.User;
 
 namespace AutomatizacionApi.Interfaces.Services
 {

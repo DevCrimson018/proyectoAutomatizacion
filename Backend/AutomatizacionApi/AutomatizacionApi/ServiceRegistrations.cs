@@ -35,7 +35,7 @@ namespace AutomatizacionApi
             });
 
             // Add the identity services
-            services.AddIdentity<BaseUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddEntityFrameworkStores<IdentityContext>()
                 .AddDefaultTokenProviders();
 
@@ -51,6 +51,7 @@ namespace AutomatizacionApi
         public static void AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IRoleRepository, RoleRepository>();
         }
 
         public static void AddServices(this IServiceCollection services)

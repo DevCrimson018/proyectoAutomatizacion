@@ -6,5 +6,8 @@ namespace AutomatizacionApi.Entities
     {
         public string? Status { get; set; }
         public string? Description { get; set; }
+
+        // Navigation Properties
+        public ICollection<Bus>? Bus { get; set; }
     }
 }

@@ -1,9 +1,9 @@
 ﻿namespace AutomatizacionApi.Entities.User
 {
-    public class Customer  : BaseUser
+    public class Customer  : ApplicationUser
     {
 
         //Navigation Properties
-        public ICollection<UserTicket>? UserTickets { get; set; }
+        public ICollection<Reservation>? Reservations { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace AutomatizacionApi.Entities.User
 {
-    public class Admin : BaseUser
+    public class Admin : ApplicationUser
     {
     }
 }
