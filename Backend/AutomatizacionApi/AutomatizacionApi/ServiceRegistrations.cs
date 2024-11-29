@@ -1,11 +1,11 @@
-﻿using AutomatizacionApi.Context.Identity;
-using AutomatizacionApi.Context.Interceptors;
+﻿using AutomatizacionApi.Application.Interfaces.Repositories;
+using AutomatizacionApi.Application.Interfaces.Services;
+using AutomatizacionApi.Application.Services;
+using AutomatizacionApi.Domain.Entities.User;
 using AutomatizacionApi.Entities;
-using AutomatizacionApi.Entities.User;
-using AutomatizacionApi.Interfaces.Repositories;
-using AutomatizacionApi.Interfaces.Services;
-using AutomatizacionApi.Repositories;
-using AutomatizacionApi.Services;
+using AutomatizacionApi.Persistence.Context.Identity;
+using AutomatizacionApi.Persistence.Context.Interceptors;
+using AutomatizacionApi.Persistence.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
