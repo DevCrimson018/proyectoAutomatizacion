@@ -2,7 +2,6 @@
 using AutomatizacionApi.Application.Interfaces.Services;
 using AutomatizacionApi.Application.Services;
 using AutomatizacionApi.Domain.Entities.User;
-using AutomatizacionApi.Entities;
 using AutomatizacionApi.Persistence.Context.Identity;
 using AutomatizacionApi.Persistence.Context.Interceptors;
 using AutomatizacionApi.Persistence.Repositories;
@@ -65,7 +64,13 @@ namespace AutomatizacionApi
 
         public static void AddServices(this IServiceCollection services)
         {
-            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IUserService, UserService>()
+                .AddTransient<IBusService, BusService>()
+                .AddTransient<ILocationService, LocationService>()
+                .AddTransient<ITicketService, TicketService>()
+                .AddTransient<IReservationService, ReservationService>()
+                .AddTransient<ITicketCodeService, TicketCodeService>()
+                .AddTransient<IBusStatusServices, BusStatusServices>();
         }
 
     }

@@ -1,5 +1,4 @@
-﻿using AutomatizacionApi.Entities;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
@@ -9,19 +8,31 @@ using AutomatizacionApi.Application.Interfaces.Services;
 using AutomatizacionApi.Application.Common;
 using AutomatizacionApi.Application.DTOs.Auth;
 using AutomatizacionApi.Domain.Entities.User;
+using AutoMapper;
 namespace AutomatizacionApi.Application.Services
 {
     public class UserService(IUserRepository userRepository,
         UserManager<ApplicationUser> userManager,
-        SignInManager<ApplicationUser> signInManager) : IUserService
+        SignInManager<ApplicationUser> signInManager,
+        IMapper mapper) : IUserService
     {
         private readonly IUserRepository _userRepository = userRepository;
         private readonly UserManager<ApplicationUser> _userManager = userManager;
         private readonly SignInManager<ApplicationUser> _signInManager = signInManager;
+        private readonly IMapper _mapper = mapper;
 
-        public async Task<ApplicationUser> RegisterAsync(ApplicationUser user, string password)
+        public async Task<ApplicationUser> CreateCustomerAsync(CustomerCreate customer)
         {
-            return await _userRepository.Add(user, password);
+            return await _userRepository.Add(_mapper.Map<Customer>(customer), customer.Password!);
+        }
+
+        public async Task<ApplicationUser> CreateDriverAsync(DriverCreate driver)
+        {
+            return await _userRepository.Add(_mapper.Map<Driver>(driver), driver.Password!);
+        }
+        public async Task<ApplicationUser> CreateAdminAsync(AdminCreate admin)
+        {
+            return await _userRepository.Add(_mapper.Map<Admin>(admin), admin.Password!);
         }
 
         public async Task<Result<LoginResponse>> AuthenticationAsync(LoginRequest request)

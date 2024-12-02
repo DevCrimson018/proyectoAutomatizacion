@@ -1,5 +1,4 @@
 ﻿using AutomatizacionApi.Domain.Entities.User;
-using AutomatizacionApi.Entities;
 
 namespace AutomatizacionApi.Application.Interfaces.Repositories
 {

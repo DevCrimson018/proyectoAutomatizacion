@@ -1,6 +1,7 @@
 using AutomatizacionApi;
 using AutomatizacionApi.Application.Interfaces.Repositories;
 using AutomatizacionApi.Domain.Entities.User;
+using AutomatizacionApi.NewFolder;
 using AutomatizacionApi.Persistence.Context.Identity;
 using AutomatizacionApi.Persistence.SEEDs;
 using Microsoft.AspNetCore.Identity;
@@ -19,8 +20,48 @@ builder.Services.AddIdentityLayer(builder.Configuration);
 builder.Services.AddRepositories();
 builder.Services.AddServices();
 
+builder.Services.AddScoped<ClaimsHelper>(sp =>
+{
+    var httpContextAccessor = sp.GetRequiredService<IHttpContextAccessor>();
+    return new ClaimsHelper(httpContextAccessor.HttpContext?.User!);
+});
 
-builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "Your API",
+        Version = "v1"
+    });
+
+    // Define el esquema de seguridad para los tokens
+    options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT", // Puedes ajustar esto si no usas JWT
+        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        Description = "Introduce 'Bearer' seguido de tu token JWT en el campo. Ejemplo: 'Bearer eyJhbGciOiJIUzI1NiIsIn...'"
+    });
+
+    // Requiere seguridad en todas las operaciones de la API
+    options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+    {
+        {
+            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            {
+                Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                {
+                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new List<string>() // Lista de scopes si los necesitas
+        }
+    });
+});
 
 builder.Configuration
     .AddJsonFile("appsettings.json", false)
@@ -28,6 +69,7 @@ builder.Configuration
     .AddUserSecrets(Assembly.GetEntryAssembly()!)
     .AddEnvironmentVariables();
 
+builder.Services.AddHttpClient<TokenHelper>();
 
 
 var app = builder.Build();
@@ -51,7 +93,7 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

@@ -1,6 +1,5 @@
 ﻿using AutomatizacionApi.Application.Interfaces.Repositories;
 using AutomatizacionApi.Domain.Entities.User;
-using AutomatizacionApi.Repositories;
 
 namespace AutomatizacionApi.Persistence.SEEDs
 {
