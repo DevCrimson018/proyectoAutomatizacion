@@ -8,7 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="AutoMapper" Version="13.0.1" />
+=======
+>>>>>>> 218f39308a0faeeacedcf98d8f09ef5ca7dcccbc
     <PackageReference Include="FluentValidation" Version="11.11.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.11" />
