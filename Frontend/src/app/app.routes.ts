@@ -6,8 +6,13 @@ export const routes: Routes = [
         redirectTo: "onboarding",
         pathMatch: "full"
     },
+    
     {
         path: "onboarding",
         loadChildren: () => import('./pages/onboarding/onboarding.module').then(m => m.OnboardingModule)
+    },
+    {
+        path: "tickets",
+        loadChildren: () => import('./pages/tickets/tickets.module').then(m => m.TicketsModule)
     }
 ];
