@@ -5,11 +5,10 @@ using AutomatizacionApi.Domain.Entities;
 
 namespace AutomatizacionApi.Application.Services
 {
-    public class TicketCodeService(ITicketsCodeRepository ticketsCodeRepository,
-        IReservationService reservationService) : ITicketCodeService
+    public class TicketCodeService(ITicketsCodeRepository ticketsCodeRepository) : ITicketCodeService
     {
         private readonly ITicketsCodeRepository _ticketCodeRepository = ticketsCodeRepository;
-        private readonly IReservationService _reservationService = reservationService;
+    
 
         public async Task<List<TicketsCode>> GetAllAsync()
         {
@@ -21,15 +20,15 @@ namespace AutomatizacionApi.Application.Services
             return await _ticketCodeRepository.GetById(id);
         }
 
-        public async Task<List<TicketsCode>> CreateAsync(TicketCodeCreate ticketCode)
+        public async Task<List<TicketsCode>> CreateAsync(TicketCodeCreate reservation)
         {
             var ticketsCodeList = new List<TicketsCode>();
-            var reservation = await _reservationService.GetByIdAsync(ticketCode.ReservationId) ?? throw new Exception("Reservation not found");
-            for (var i = 0; i < reservation.Quantity; i++) {
+         
+            for (var i = 0; i < reservation.Reservation.Quantity; i++) {
                 var ticket = new TicketsCode
                 {
                     TicketCode = Guid.NewGuid().ToString(),
-                    ReservationId = ticketCode.ReservationId
+                    ReservationId = reservation.Reservation.Id
                 };
                 await _ticketCodeRepository.Create(ticket);
                 ticketsCodeList.Add(ticket);

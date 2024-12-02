@@ -232,6 +232,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AutomatizacionApi.Controllers.ReservationController",
+    "Method": "ConfirmReservation",
+    "RelativePath": "Api/Reservation/Status/Confirm",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservationId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AutomatizacionApi.Controllers.TicketController",
     "Method": "GetAll",
     "RelativePath": "Api/Ticket",
@@ -297,22 +313,6 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AutomatizacionApi.Controllers.TicketCodeController",
-    "Method": "Create",
-    "RelativePath": "Api/TicketCode",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "ticketCode",
-        "Type": "AutomatizacionApi.Application.DTOs.TicketCode.TicketCodeCreate",
-        "IsRequired": true
-      }
-    ],
     "ReturnTypes": []
   },
   {

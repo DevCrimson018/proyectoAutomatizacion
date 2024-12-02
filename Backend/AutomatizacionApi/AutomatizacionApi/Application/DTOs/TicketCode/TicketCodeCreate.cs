@@ -2,6 +2,6 @@
 {
     public class TicketCodeCreate
     {
-        public Guid ReservationId { get; set; }
+        public AutomatizacionApi.Domain.Entities.Reservation Reservation { get; set; }
     }
 }
